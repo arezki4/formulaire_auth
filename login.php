@@ -25,6 +25,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die();
       }
 
+    if (strlen($username) > 10) {
+        setFlash_danger('Le nom d\'utilisateur ne doit pas dépasser 10 caractères');
+        header('Location: login.php');
+        die();
+      }
+
+    if (!preg_match("/^[a-zA-Z0-9]+$/", $username)) {
+      setFlash_danger('Le nom d\'utilisateur ne peut contenir que des lettres et des chiffres');
+      header('Location: login.php');
+      die();
+    }
+
     $query = 'SELECT * FROM users WHERE username = :username';
     
     // Check if the user has tried to log in too many times

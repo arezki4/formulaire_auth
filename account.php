@@ -19,24 +19,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$password = htmlspecialchars($_POST['password']);
 
 		if(empty($username) || empty($password)){
-	    	setFlash_danger('Veuillez remplir tous les champs');
-	    	header('Location: account.php');
-	    	die();
+	    setFlash_danger('Veuillez remplir tous les champs');
+	    header('Location: account.php');
+	    die();
 	  	}
 
 	  	if (strlen($password) < 8) {
-	        setFlash_danger('Le mot de passe doit avoir au moins 8 caractères et au moins une lettre et un chiffre');
-	        header('Location: account.php');
-	        die();
+	       setFlash_danger('Le mot de passe doit avoir au moins 8 caractères et au moins une lettre et un chiffre');
+	       header('Location: account.php');
+	       die();
 	    }
 
-	    if (!preg_match("#[0-9]+#", $password) || !preg_match("#[a-zA-Z]+#", $password)) {
-	        setFlash_danger('Le mot de passe doit avoir au moins 8 caractères et au moins une lettre et un chiffre');
-	        header('Location: account.php');
-	        die();
+	    if (!preg_match("#[0-9]+#", $password) || !preg_match("#[a-zA-Z]+#", $password) || !preg_match("#[^a-zA-Z0-9]+#", $password)) {
+	      setFlash_danger('Le mot de passe doit contenir au moins une lettre, un chiffre et un caractère spécial');
+	      header('Location: account.php');
+	      die();
 	    }
+
+	    if (strlen($username) > 10) {
+			   setFlash_danger('Le nom d\'utilisateur ne doit pas dépasser 10 caractères');
+			   header('Location: account.php');
+			   die();
+			}
+			if (!preg_match("/^[a-zA-Z0-9]+$/", $username)) {
+				setFlash_danger('Le nom d\'utilisateur ne peut contenir que des lettres et des chiffres');
+		    header('Location: account.php');
+		    die();
+			}
 
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+
+		$query = 'SELECT COUNT(*) FROM users WHERE username = :username';
+		$select = $db->prepare($query);
+		$select->bindValue('username', $username);
+		$select->execute();
+		$result = $select->fetchColumn();
+
+		if ($result) {
+		  setFlash_danger('Le nom d\'utilisateur existe déjà');
+		  header('Location: account.php');
+		  die();
+		}
 
 		$query = 'INSERT INTO users (username, password) VALUES (:username, :password)';
 		$select = $db->prepare($query);
