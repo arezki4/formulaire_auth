@@ -1,11 +1,11 @@
 # formulaire_auth
 Projet de création d'un formulaire d'authentification et de creéation de compte avec PHP et MySql de maniére sécurisée
 
-##Téchnologie Utilisé:
+<h>2Téchnologie Utilisé</h2>:
 
 j'ai utilisé du PHP pour le backend, du Mysql pour la base de donnée, le language SQL pour gérer cette derniére et du bootstrap pour le front
 
-##Instruction d'execution du Projet:
+<h2>Instruction d'execution du Projet:</h2>
 
 1/ Il faut télécharger la base de donnée qui se trouve dans le fichier sql/db.sql avec la ligne de commande suivante: **sudo mysql -u root -p < chemin du projet sur votre machine/sql/db.sql**
 
