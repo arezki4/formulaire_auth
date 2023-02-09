@@ -16,6 +16,10 @@ echo '<h1>Bienvenue '.$user['username'].'</h1>';
 
 echo'<div class="row">
 
+    <div class="col-md-12">
+        <img style="width: 20%;" alt="Bootstrap Image Preview" src="../img/logo.png" />
+    </div>
+
     <br></br>
     
     <div class="col-sm-4">

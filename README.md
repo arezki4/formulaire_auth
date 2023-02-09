@@ -13,4 +13,12 @@ j'ai utilisé du PHP pour le backend, du Mysql pour la base de donnée, le langu
 
 3/C'est fait le site est operationnel
 
-PS: Si vous voulez reimporter la base de donnée pour une raison ou une autre, noubliez pas de retirer le commentaire sur le **Drop DATABASE Formulaire_Securise;**
+<h2>Identifiant:</h2>
+
+Vous avez les identifiant de connexion qui sont:
+Nom : admin
+MP: adminadmin1$
+
+**Remarque:** si vous n'arrivez pas a vous connecter avec ses identifiants, il vous suffira juste de creer un compte sur le site directement
+
+PS: Si vous voulez reimporter la base de donnée pour une raison ou une autre, noubliez pas de retirer le commentaire sur le **Drop DATABASE Formulaire_Securise;** afin de supprimer l'ancienne

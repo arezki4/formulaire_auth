@@ -8,6 +8,10 @@
 
 <div class="row">
 
+    <div class="col-md-12">
+        <img style="width: 15%;" alt="Bootstrap Image Preview" src="img/logo.png" />
+    </div>
+
     <h1>Mon Site Bien Securisé</h1>
 
     <br></br>
