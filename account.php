@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	</div>
 	<div class="form-group">
 		<label for="password">Mot de passe</label>
-		<input type="password" class="form-control" id="password" name="password">
+		<input type="password" class="form-control" id="password" name="password" size=20 maxlength=20>
 	</div>
 	<button type="submit" class="btn btn-default" id="password">Validée</button>
 </form>

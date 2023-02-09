@@ -12,7 +12,7 @@
 
     <br></br>
     
-    <div class="col-sm-4">
+    <div class="col-sm-4" style="width: 34.3333%;">
         <div class="jumbotron">
             <h2>Connexion au Site</h2>
             <a type="button" class="btn btn-primary btn-large" href="login.php" > Se connecter </a>
