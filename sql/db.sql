@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 -- Base de données : `Formulaire_Securise`
 --
 
---Drop DATABASE Formulaire_Securise; /*à utiliser si vous voulez reupload la bdd*/
+/*Drop DATABASE Formulaire_Securise;*/ /*à utiliser si vous voulez reupload la bdd*/
 CREATE DATABASE Formulaire_Securise;
 USE Formulaire_Securise
 
