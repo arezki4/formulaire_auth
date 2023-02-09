@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <h1>Mon formulaire d'authentification</h1>
 
-<form action="#" method="post" >
+<form id="myForm" action="#" method="post" >
   <input type="hidden" name="csrf_token" value="<?= $csrf_token ?>">
 	<div class="form-group">
 		<label for="username">Nom d'utilisateur</label>
@@ -114,7 +114,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		<input type="password" class="form-control" id="password" name="password" size=20 maxlength=20>
 	</div>
 	<button type="submit" class="btn btn-default" id="password">Se connecter</button>
+  <button type="reset" class="btn btn-warning" onclick="document.getElementById('myForm').reset();">Reset</button>
 </form>
+
+<script>
+  const input = document.getElementById("username");
+  input.addEventListener("input", function(event) {
+    if (/[^A-Za-z0-9]/.test(input.value)) {
+      input.value = input.value.replace(/[^0-9]/g, "");
+    }
+  });
+</script>
 
 
 <?php //include 'lib/debug.php'; ?>

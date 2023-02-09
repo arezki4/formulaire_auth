@@ -13,16 +13,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Traitement d'erreur pour une requête non valide (CSRF)
     exit('Requête non valide');
   }
-	if(isset($_POST['username']) && isset($_POST['password'])){
+
+	if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirm_password'])){
 
 		$username = htmlspecialchars($_POST['username']);
 		$password = htmlspecialchars($_POST['password']);
+		$confirm_password = htmlspecialchars($_POST['confirm_password']);
 
-		if(empty($username) || empty($password)){
+		if(empty($username) || empty($password) || empty($confirm_password)){
 	    setFlash_danger('Veuillez remplir tous les champs');
 	    header('Location: account.php');
 	    die();
 	  	}
+
+	  	if ($password != $confirm_password) {
+    		setFlash_danger('Les mots de passe ne correspondent pas');
+    		header('Location: account.php');
+    		die();
+  		}
 
 	  	if (strlen($password) < 8) {
 	       setFlash_danger('Le mot de passe doit avoir au moins 8 caractères et au moins une lettre et un chiffre');
@@ -94,8 +102,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		<label for="password">Mot de passe</label>
 		<input type="password" class="form-control" id="password" name="password" size=20 maxlength=20>
 	</div>
+	<div class="form-group">
+		<label for="confirm_password">Confirmez votre mot de passe</label>
+		<input type="password" class="form-control" id="confirm_password" name="confirm_password" size=20 maxlength=20>
+	</div>
 	<button type="submit" class="btn btn-default" id="password">Validée</button>
+	<button type="reset" class="btn btn-warning" onclick="document.getElementById('myForm').reset();">Reset</button>
 </form>
+
+<script>
+  const input = document.getElementById("username");
+  input.addEventListener("input", function(event) {
+    if (/[^A-Za-z0-9]/.test(input.value)) {
+      input.value = input.value.replace(/[^0-9]/g, "");
+    }
+  });
+</script>
 
 
 <?php //include 'lib/debug.php'; ?>

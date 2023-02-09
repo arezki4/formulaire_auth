@@ -10,14 +10,6 @@
         <title>Mon Compte Sécurise</title>
 
         <link href="<?= WEBROOT; ?>css/bootstrap.min.css" rel="stylesheet">
-
-        <script>
-            window.onpageshow = function(event) {
-              if (event.persisted) {
-                window.location.reload()
-              }
-            };
-      </script>
         
     </head>
 
