@@ -1,7 +1,7 @@
 # formulaire_auth
 Projet de création d'un formulaire d'authentification et de creéation de compte avec PHP et MySql de maniére sécurisée
 
-<h>2Téchnologie Utilisé</h2>:
+<h2>2Téchnologie Utilisé</h2>:
 
 j'ai utilisé du PHP pour le backend, du Mysql pour la base de donnée, le language SQL pour gérer cette derniére et du bootstrap pour le front
 
