@@ -4,6 +4,9 @@ Projet de création d'un formulaire d'authentification et de creéation de compt
 <h2>Téchnologie Utilisé:</h2>
 
 j'ai utilisé du PHP pour le backend, du Mysql pour la base de donnée, le language SQL pour gérer cette derniére et du bootstrap pour le front
+Pour les outils il faut jute apache2 avec MySql et sur windows utiliser Wampp,Lampp avec Phpmyadmin
+petit lien pour installer apache2 avec Mysql: https://www.cherryservers.com/blog/how-to-install-linux-apache-mysql-and-php-lamp-stack-on-ubuntu-20-04
+
 
 <h2>Instruction d'execution du Projet:</h2>
 
@@ -20,5 +23,6 @@ Nom : admin
 MP: adminadmin1$
 
 **Remarque:** si vous n'arrivez pas a vous connecter avec ses identifiants, il vous suffira juste de creer un compte sur le site directement
+
 
 PS: Si vous voulez reimporter la base de donnée pour une raison ou une autre, noubliez pas de retirer le commentaire sur le **Drop DATABASE Formulaire_Securise;** afin de supprimer l'ancienne
